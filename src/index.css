@@ -811,20 +811,38 @@
 
 .auth-logo {
   display: flex;
-
+  align-items: center;
   justify-content: center;
 
-  margin-bottom: 15px;
+  width: 100%;
+
+  margin-bottom: 18px;
+
+  overflow: visible;
 }
 
 
 .auth-logo img {
-  width: 80px;
-  height: 80px;
+  width: 1200px;
+  height: 120px;
+
+  max-width: none;
 
   object-fit: contain;
+
+  display: block;
+
+  transform: scale(1.15);
+  transform-origin: center;
+
+  transition: transform 0.3s ease;
 }
 
+/* Subtle hover effect */
+
+.auth-logo img:hover {
+  transform: scale(1.2);
+}
 
 .auth-card h2 {
   text-align: center;
@@ -961,8 +979,8 @@
   }
 
   .auth-logo img {
-    width: 65px;
-    height: 65px;
+    width: 100px;
+    height: 100px;
   }
 
 }
