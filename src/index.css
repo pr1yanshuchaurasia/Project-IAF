@@ -1,107 +1,637 @@
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f4f6f8;
-}
 
-/* Fighters Header */
+/* ========================================= */
+/* IAF NAVBAR */
+/* ========================================= */
 
-.fighters-header {
+.iaf-navbar {
+  min-height: 84px;
+  padding: 0 22px !important;
+
   background:
     linear-gradient(
-      rgba(8, 15, 25, 0.92),
-      rgba(8, 15, 25, 0.92)
-    ),
-    linear-gradient(135deg, #17202a, #263238);
+      90deg,
+      #031323,
+      #071b30
+    ) !important;
 
-  color: white;
-  padding: 90px 0;
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.15);
+
+  z-index: 1000;
 }
 
-.fighters-header h1 {
-  font-size: 48px;
-  font-weight: 800;
-  margin-bottom: 15px;
+
+/* ========================================= */
+/* BRAND */
+/* ========================================= */
+
+.iaf-brand {
+  display: flex !important;
+
+  align-items: center;
+
+  gap: 14px;
+
+  color: #ffffff !important;
+
+  margin-right: 35px;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  overflow: visible;
 }
 
-.fighters-header p {
-  color: #b8c0c8;
-  max-width: 650px;
-  margin: auto;
-}
 
-.section-label {
-  color: #f4c542 !important;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  margin-bottom: 15px !important;
-}
+/* ========================================= */
+/* IAF LOGO */
+/* ========================================= */
 
-/* Fighter Card */
-
-.fighter-card {
-  border: none !important;
-  border-radius: 18px !important;
-  overflow: hidden;
-  background: white;
-  transition: all 0.3s ease;
-}
-
-.fighter-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* Image Area */
-
-.fighter-image {
-  height: 190px;
-  background:
-    linear-gradient(
-      135deg,
-      #111820,
-      #27313a
-    );
+.brand-icon {
+  width: 72px;
+  height: 72px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
+
+  flex-shrink: 0;
+
+  overflow: visible;
+
   position: relative;
 }
 
-.fighter-icon {
-  font-size: 80px;
-  color: #dce3e8;
-  transform: rotate(-15deg);
+
+/*
+   IMPORTANT:
+   The image is intentionally larger than
+   the container because the original PNG
+   may contain transparent padding.
+*/
+
+.brand-icon img {
+  width: 82px;
+  height: 82px;
+
+  max-width: none;
+
+  object-fit: contain;
+
+  display: block;
+
+  transform: scale(1.25);
+
+  transform-origin: center;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
-.generation-badge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
+
+/* Logo hover */
+
+.iaf-brand:hover .brand-icon img {
+  transform: scale(1.32);
 }
 
-/* Specifications */
 
-.fighter-spec {
-  border-top: 1px solid #eee;
-  padding-top: 15px;
-}
+/* ========================================= */
+/* BRAND TEXT */
+/* ========================================= */
 
-.fighter-spec > div {
+.brand-text {
   display: flex;
-  gap: 12px;
+
+  flex-direction: column;
+
+  line-height: 1.1;
+
+  justify-content: center;
+}
+
+.brand-text strong {
+  color: #ffffff;
+
+  font-size: 19px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
+}
+
+.brand-text span {
+  margin-top: 5px;
+
+  color: #aab8c6;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 1.8px;
+}
+
+
+/* ========================================= */
+/* NAVIGATION */
+/* ========================================= */
+
+.iaf-nav {
+  height: 84px;
+
   align-items: center;
-  margin-bottom: 12px;
-  color: #555;
+
+  gap: 2px;
 }
 
-.fighter-spec svg {
-  color: #263238;
+.iaf-nav .nav-link {
+  position: relative;
+
+  height: 84px;
+
+  padding: 0 14px !important;
+
+  display: flex;
+
+  align-items: center;
+
+  color: #aeb9c5 !important;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.4px;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.iaf-nav .nav-link:hover {
+  color: #ffffff !important;
+}
+
+
+/* ========================================= */
+/* ACTIVE NAVIGATION */
+/* ========================================= */
+
+.iaf-nav .nav-link.active-nav {
+  color: #ffffff !important;
+}
+
+.iaf-nav .nav-link.active-nav::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 14px;
+
+  right: 14px;
+
+  height: 3px;
+
+  background: #287ff0;
+
+  border-radius:
+    3px 3px 0 0;
+
+  box-shadow:
+    0 0 8px
+    rgba(40, 127, 240, 0.45);
+}
+
+
+/* ========================================= */
+/* RIGHT ACTIONS */
+/* ========================================= */
+
+.navbar-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+
+  margin-left: 20px;
+
+  color: #dce4ec;
+
+  flex-shrink: 0;
+}
+
+
+/* ========================================= */
+/* NOTIFICATION */
+/* ========================================= */
+
+.notification {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
   font-size: 18px;
+
+  color: #dce4ec;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    transform 0.2s ease;
 }
 
-.fighter-spec span {
-  font-size: 13px;
+.notification:hover {
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+.notification span {
+  position: absolute;
+
+  top: -9px;
+
+  right: -10px;
+
+  width: 17px;
+
+  height: 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #1769e0;
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  border: 2px solid #071b30;
+}
+
+
+/* ========================================= */
+/* PROFILE */
+/* ========================================= */
+
+.profile-icon {
+  font-size: 27px;
+
+  color: #d5dde6;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.profile-icon:hover {
+  color: #ffffff;
+
+  transform: scale(1.05);
+}
+
+
+/* ========================================= */
+/* BOOTSTRAP MOBILE TOGGLE */
+/* ========================================= */
+
+.iaf-navbar .navbar-toggler {
+  border: 1px solid
+    rgba(255, 255, 255, 0.25);
+
+  padding: 6px 9px;
+
+  box-shadow: none !important;
+}
+
+.iaf-navbar .navbar-toggler:focus {
+  box-shadow:
+    0 0 0 2px
+    rgba(40, 127, 240, 0.25) !important;
+}
+
+.iaf-navbar .navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+
+/* ========================================= */
+/* LAPTOP / TABLET */
+/* ========================================= */
+
+@media (max-width: 1200px) {
+
+  .iaf-navbar {
+    padding: 0 16px !important;
+  }
+
+  .iaf-brand {
+    margin-right: 15px;
+
+    gap: 11px;
+  }
+
+
+  /* Larger logo */
+
+  .brand-icon {
+    width: 66px;
+    height: 66px;
+  }
+
+  .brand-icon img {
+    width: 76px;
+    height: 76px;
+
+    transform: scale(1.22);
+  }
+
+
+  .brand-text strong {
+    font-size: 16px;
+  }
+
+  .brand-text span {
+    font-size: 8px;
+
+    letter-spacing: 1.4px;
+  }
+
+
+  .iaf-nav .nav-link {
+    padding: 0 9px !important;
+
+    font-size: 11px;
+  }
+
+  .iaf-nav .nav-link.active-nav::after {
+    left: 9px;
+
+    right: 9px;
+  }
+
+
+  .navbar-actions {
+    gap: 18px;
+
+    margin-left: 10px;
+  }
+}
+
+
+/* ========================================= */
+/* MOBILE NAVBAR */
+/* ========================================= */
+
+@media (max-width: 991px) {
+
+  .iaf-navbar {
+    min-height: 72px;
+
+    padding: 8px 15px !important;
+  }
+
+
+  /* Brand */
+
+  .iaf-brand {
+    gap: 9px;
+
+    margin-right: 0;
+  }
+
+
+  /* Logo */
+
+  .brand-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .brand-icon img {
+    width: 68px;
+    height: 68px;
+
+    transform: scale(1.18);
+  }
+
+
+  /* Brand text */
+
+  .brand-text strong {
+    font-size: 15px;
+
+    letter-spacing: 0.5px;
+  }
+
+  .brand-text span {
+    font-size: 7px;
+
+    letter-spacing: 1.3px;
+  }
+
+
+  /* ===================================== */
+  /* MOBILE NAVIGATION */
+  /* ===================================== */
+
+  .iaf-nav {
+    height: auto;
+
+    width: 100%;
+
+    align-items: flex-start;
+
+    padding: 12px 0;
+
+    gap: 0;
+
+    margin-top: 5px;
+  }
+
+  .iaf-nav .nav-link {
+    width: 100%;
+
+    height: 44px;
+
+    padding: 0 15px !important;
+
+    justify-content: flex-start;
+
+    font-size: 12px;
+  }
+
+
+  /* Mobile active indicator */
+
+  .iaf-nav .nav-link.active-nav::after {
+    left: 0;
+
+    right: auto;
+
+    top: 9px;
+
+    bottom: auto;
+
+    width: 3px;
+
+    height: 26px;
+
+    border-radius:
+      0 3px 3px 0;
+  }
+
+
+  /* ===================================== */
+  /* MOBILE RIGHT ACTIONS */
+  /* ===================================== */
+
+  .navbar-actions {
+    width: 100%;
+
+    margin-left: 0;
+
+    padding: 10px 15px 15px;
+
+    justify-content: flex-start;
+
+    gap: 22px;
+
+    border-top:
+      1px solid
+      rgba(255, 255, 255, 0.07);
+  }
+}
+
+
+/* ========================================= */
+/* SMALL MOBILE */
+/* ========================================= */
+
+@media (max-width: 576px) {
+
+  .iaf-navbar {
+    padding: 7px 10px !important;
+  }
+
+
+  /* Logo */
+
+  .brand-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .brand-icon img {
+    width: 62px;
+    height: 62px;
+
+    transform: scale(1.15);
+  }
+
+
+  /* Brand */
+
+  .brand-text strong {
+    font-size: 13px;
+  }
+
+  .brand-text span {
+    font-size: 6.5px;
+
+    letter-spacing: 1px;
+  }
+
+
+  /* Navigation */
+
+  .iaf-nav .nav-link {
+    font-size: 11px;
+
+    height: 42px;
+
+    padding: 0 12px !important;
+  }
+
+
+  /* Actions */
+
+  .navbar-actions {
+    padding-left: 12px;
+
+    padding-right: 12px;
+  }
+}
+
+
+/* ========================================= */
+/* EXTRA SMALL MOBILE */
+/* ========================================= */
+
+@media (max-width: 400px) {
+
+  .iaf-brand {
+    gap: 7px;
+  }
+
+
+  /* Logo */
+
+  .brand-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand-icon img {
+    width: 58px;
+    height: 58px;
+
+    transform: scale(1.12);
+  }
+
+
+  /* Brand text */
+
+  .brand-text strong {
+    font-size: 11px;
+  }
+
+  .brand-text span {
+    font-size: 5.5px;
+
+    letter-spacing: 0.8px;
+  }
+
+
+  /* Toggle */
+
+  .iaf-navbar .navbar-toggler {
+    padding: 5px 7px;
+  }
 }

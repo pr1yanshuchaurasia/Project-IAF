@@ -1,61 +1,114 @@
 import { Card, Badge, Button } from "react-bootstrap";
-import { FaPlane, FaTachometerAlt, FaLayerGroup } from "react-icons/fa";
+
+import {
+  FaTachometerAlt,
+  FaMapMarkerAlt,
+  FaCogs,
+  FaUser,
+  FaArrowRight,
+} from "react-icons/fa";
 
 function FighterCard({ fighter }) {
   return (
-    <Card className="fighter-card h-100">
+    <Card className="fighter-card">
 
-      {/* Aircraft Image Area */}
-      <div className="fighter-image">
+      {/* CARD HEADER */}
+      <div className="fighter-card-header">
 
-        <FaPlane className="fighter-icon" />
+        <h2>{fighter.name}</h2>
 
-        <Badge bg="warning" text="dark" className="generation-badge">
+        <Badge className="generation-badge">
           {fighter.generation}
         </Badge>
 
       </div>
 
-      <Card.Body>
 
-        <Card.Title className="fw-bold fs-4">
-          {fighter.name}
-        </Card.Title>
+      {/* AIRCRAFT IMAGE */}
+      <div className="fighter-card-image">
 
-        <Card.Text className="text-muted">
-          {fighter.role}
-        </Card.Text>
+        <img
+          src={fighter.image}
+          alt={fighter.name}
+          onError={(event) => {
+            event.currentTarget.style.display = "none";
+          }}
+        />
 
-        <div className="fighter-spec">
+        <div className="image-overlay"></div>
+
+      </div>
+
+
+      {/* SPECIFICATIONS */}
+      <div className="fighter-specifications">
+
+        {/* SPEED */}
+        <div className="spec-item">
+
+          <FaTachometerAlt className="spec-icon" />
 
           <div>
-            <FaTachometerAlt />
-            <span>
-              <strong>Speed</strong>
-              <br />
-              {fighter.speed}
-            </span>
-          </div>
-
-          <div>
-            <FaLayerGroup />
-            <span>
-              <strong>Generation</strong>
-              <br />
-              {fighter.generation}
-            </span>
+            <span>MAX SPEED</span>
+            <strong>{fighter.speed}</strong>
           </div>
 
         </div>
 
-        <Button
-          variant="dark"
-          className="w-100 mt-3"
-        >
+
+        {/* RANGE */}
+        <div className="spec-item">
+
+          <FaMapMarkerAlt className="spec-icon" />
+
+          <div>
+            <span>RANGE</span>
+            <strong>{fighter.range}</strong>
+          </div>
+
+        </div>
+
+
+        {/* ENGINE */}
+        <div className="spec-item">
+
+          <FaCogs className="spec-icon" />
+
+          <div>
+            <span>ENGINE</span>
+            <strong>{fighter.engine}</strong>
+          </div>
+
+        </div>
+
+
+        {/* CREW */}
+        <div className="spec-item">
+
+          <FaUser className="spec-icon" />
+
+          <div>
+            <span>CREW</span>
+            <strong>{fighter.crew}</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {/* BUTTON */}
+      <div className="fighter-card-footer">
+
+        <Button className="spec-button">
+
           View Specifications
+
+          <FaArrowRight />
+
         </Button>
 
-      </Card.Body>
+      </div>
 
     </Card>
   );
