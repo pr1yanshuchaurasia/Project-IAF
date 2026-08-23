@@ -1,12 +1,10 @@
-/* =========================================
+/* =========================================================
    FIGHTER CARD
-========================================= */
+========================================================= */
 
 .fighter-card {
-  position: relative;
   width: 100%;
   min-height: 520px;
-
   overflow: hidden;
 
   border: 1px solid #dce4ec !important;
@@ -14,8 +12,7 @@
 
   background: #ffffff;
 
-  box-shadow:
-    0 12px 35px rgba(3, 19, 35, 0.10);
+  box-shadow: 0 12px 35px rgba(3, 19, 35, 0.1);
 
   transition:
     transform 0.3s ease,
@@ -23,51 +20,36 @@
     border-color 0.3s ease;
 }
 
-
-/* =========================================
-   CARD HOVER
-========================================= */
-
 .fighter-card:hover {
-  transform: translateY(-7px);
+  transform: translateY(-6px);
 
   border-color: rgba(40, 127, 240, 0.35) !important;
 
-  box-shadow:
-    0 20px 45px rgba(3, 19, 35, 0.16);
+  box-shadow: 0 20px 45px rgba(3, 19, 35, 0.16);
 }
 
 
-/* =========================================
+/* =========================================================
    CARD HEADER
-========================================= */
+========================================================= */
 
 .fighter-card-header {
   min-height: 70px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
-  gap: 15px;
+  gap: 12px;
 
   padding: 18px 20px;
 
-  background:
-    linear-gradient(
-      90deg,
-      #031323,
-      #071b30
-    );
-
-  border-bottom: 1px solid
-    rgba(255, 255, 255, 0.08);
+  background: linear-gradient(
+    90deg,
+    #031323,
+    #071b30
+  );
 }
-
-
-/* Fighter Name */
 
 .fighter-card-header h2 {
   margin: 0;
@@ -75,23 +57,20 @@
   color: #ffffff;
 
   font-size: 20px;
-
   font-weight: 800;
 
   letter-spacing: 0.4px;
-
-  line-height: 1.2;
 }
 
 
-/* =========================================
-   GENERATION BADGE
-========================================= */
+/* =========================================================
+   GENERATION
+========================================================= */
 
 .generation-badge {
   flex-shrink: 0;
 
-  padding: 6px 10px;
+  padding: 6px 10px !important;
 
   border-radius: 20px !important;
 
@@ -99,130 +78,91 @@
 
   color: #ffffff !important;
 
-  font-size: 9px;
+  font-size: 9px !important;
 
-  font-weight: 700;
+  font-weight: 700 !important;
 
   letter-spacing: 0.8px;
-
-  text-transform: uppercase;
 }
 
 
-/* =========================================
+/* =========================================================
    AIRCRAFT IMAGE
-========================================= */
+========================================================= */
 
 .fighter-card-image {
   position: relative;
 
   width: 100%;
-
   height: 230px;
 
   overflow: hidden;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
-  background:
-    radial-gradient(
-      circle at center,
-      #edf4fb,
-      #dce7f1
-    );
+  background: radial-gradient(
+    circle at center,
+    #edf4fb,
+    #dce7f1
+  );
 }
-
-
-/* Aircraft Image */
 
 .fighter-card-image img {
   width: 100%;
-
   height: 100%;
-
-  object-fit: contain;
 
   padding: 15px;
 
+  object-fit: contain;
+
   display: block;
-
-  position: relative;
-
-  z-index: 1;
 
   transition:
     transform 0.45s ease,
     filter 0.45s ease;
 }
 
+.fighter-card:hover .fighter-card-image img {
+  transform: scale(1.06);
 
-/* Image Hover */
-
-.fighter-card:hover
-.fighter-card-image img {
-  transform: scale(1.07);
-
-  filter:
-    drop-shadow(
-      0 12px 18px
-      rgba(3, 19, 35, 0.20)
-    );
+  filter: drop-shadow(
+    0 12px 18px rgba(3, 19, 35, 0.2)
+  );
 }
-
-
-/* =========================================
-   IMAGE OVERLAY
-========================================= */
 
 .image-overlay {
   position: absolute;
 
   inset: 0;
 
-  z-index: 2;
-
   pointer-events: none;
 
-  background:
-    linear-gradient(
-      to bottom,
-      transparent 65%,
-      rgba(3, 19, 35, 0.08)
-    );
+  background: linear-gradient(
+    to bottom,
+    transparent 65%,
+    rgba(3, 19, 35, 0.08)
+  );
 }
 
 
-/* =========================================
+/* =========================================================
    SPECIFICATIONS
-========================================= */
+========================================================= */
 
 .fighter-specifications {
   display: grid;
 
-  grid-template-columns:
-    repeat(2, 1fr);
-
-  gap: 0;
-
-  padding: 5px 0;
+  grid-template-columns: repeat(2, 1fr);
 
   background: #ffffff;
 }
-
-
-/* =========================================
-   SPEC ITEM
-========================================= */
 
 .spec-item {
   min-height: 70px;
 
   display: flex;
-
   align-items: center;
 
   gap: 12px;
@@ -231,113 +171,68 @@
 
   border-bottom: 1px solid #edf1f4;
 
-  transition:
-    background 0.2s ease;
+  transition: background 0.2s ease;
 }
-
-
-/* Vertical divider */
 
 .spec-item:nth-child(odd) {
   border-right: 1px solid #edf1f4;
 }
 
-
-/* Hover */
-
 .spec-item:hover {
   background: #f7faff;
 }
-
-
-/* =========================================
-   SPEC ICON
-========================================= */
 
 .spec-icon {
   flex-shrink: 0;
 
   width: 17px;
-
   height: 17px;
 
   color: #287ff0;
 }
 
-
-/* =========================================
-   SPEC TEXT
-========================================= */
-
 .spec-item div {
   min-width: 0;
 
   display: flex;
-
   flex-direction: column;
 }
 
-
-/* Label */
-
 .spec-item span {
-  display: block;
-
   margin-bottom: 4px;
 
   color: #8a98a6;
 
   font-size: 8px;
-
   font-weight: 700;
 
   letter-spacing: 1px;
-
-  line-height: 1;
 }
 
-
-/* Value */
-
 .spec-item strong {
-  display: block;
-
   overflow: hidden;
 
   color: #263238;
 
   font-size: 11px;
-
   font-weight: 700;
 
   line-height: 1.25;
 
-  text-overflow: ellipsis;
-
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 
-/* =========================================
-   CARD FOOTER
-========================================= */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .fighter-card-footer {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
   padding: 17px 20px;
 
   background: #ffffff;
 }
-
-
-/* =========================================
-   SPECIFICATION BUTTON
-========================================= */
 
 .spec-button {
   width: 100%;
@@ -347,7 +242,6 @@
   display: flex !important;
 
   align-items: center;
-
   justify-content: center;
 
   gap: 10px;
@@ -356,97 +250,459 @@
 
   border-radius: 9px !important;
 
-  background:
-    linear-gradient(
-      90deg,
-      #071b30,
-      #12385d
-    ) !important;
+  background: linear-gradient(
+    90deg,
+    #071b30,
+    #12385d
+  ) !important;
 
   color: #ffffff !important;
 
-  font-size: 11px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.5px;
-
-  box-shadow:
-    0 6px 15px
-    rgba(7, 27, 48, 0.15);
+  font-size: 11px !important;
+  font-weight: 700 !important;
 
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease,
     background 0.2s ease;
 }
-
-
-/* Button Hover */
 
 .spec-button:hover {
   transform: translateY(-2px);
 
-  background:
-    linear-gradient(
-      90deg,
-      #1769e0,
-      #287ff0
-    ) !important;
-
-  box-shadow:
-    0 9px 20px
-    rgba(23, 105, 224, 0.25);
+  background: linear-gradient(
+    90deg,
+    #1769e0,
+    #287ff0
+  ) !important;
 }
-
-
-/* Arrow */
 
 .spec-button svg {
-  font-size: 10px;
-
-  transition:
-    transform 0.2s ease;
+  transition: transform 0.2s ease;
 }
-
 
 .spec-button:hover svg {
   transform: translateX(4px);
 }
 
 
-/* =========================================
+/* =========================================================
+   MODAL
+   IMPORTANT:
+   These styles are isolated from the card.
+========================================================= */
+
+.fighter-spec-modal {
+  position: fixed !important;
+
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 100vw !important;
+  height: 100vh !important;
+
+  z-index: 2000 !important;
+}
+
+
+/* Modal dialog */
+
+.fighter-spec-modal .modal-dialog {
+  width: auto;
+
+  max-width: 900px;
+
+  margin: 1.75rem auto;
+
+  pointer-events: none;
+}
+
+
+/* Modal itself */
+
+.fighter-spec-modal .modal-content {
+  position: relative;
+
+  width: 100%;
+
+  pointer-events: auto;
+
+  overflow: hidden;
+
+  border: none !important;
+
+  border-radius: 18px !important;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.fighter-spec-modal .modal-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 25px;
+
+  border: none;
+
+  background: linear-gradient(
+    100deg,
+    #031323,
+    #071b30,
+    #12385d
+  );
+}
+
+.fighter-spec-modal .modal-title {
+  margin: 0;
+
+  color: #ffffff !important;
+
+  font-size: 23px !important;
+
+  font-weight: 800 !important;
+
+  letter-spacing: 0.4px;
+}
+
+.fighter-spec-modal .btn-close {
+  margin: 0 !important;
+
+  filter: brightness(0) invert(1);
+
+  opacity: 0.8;
+}
+
+.fighter-spec-modal .btn-close:hover {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.fighter-spec-modal .modal-body {
+  padding: 0 !important;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   AIRCRAFT PREVIEW
+========================================================= */
+
+.spec-modal-image-section {
+  position: relative;
+
+  width: 100%;
+
+  height: 270px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: radial-gradient(
+    circle at center,
+    #eef5fc,
+    #dce8f3 55%,
+    #cbd9e6
+  );
+}
+
+
+/* Background grid */
+
+.spec-modal-image-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.35;
+
+  background-image:
+    linear-gradient(
+      rgba(40, 127, 240, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(40, 127, 240, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 30px 30px;
+}
+
+
+/* Aircraft */
+
+.spec-modal-image {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 270px;
+
+  padding: 20px;
+
+  object-fit: contain;
+
+  filter: drop-shadow(
+    0 15px 25px rgba(3, 19, 35, 0.25)
+  );
+}
+
+
+/* Generation badge */
+
+.spec-modal-generation {
+  position: absolute;
+
+  top: 18px;
+  left: 20px;
+
+  z-index: 5;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: #1769e0;
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   MODAL SPECIFICATIONS
+========================================================= */
+
+.spec-modal-content {
+  padding: 25px;
+}
+
+.spec-modal-heading {
+  margin-bottom: 18px;
+
+  color: #17202a;
+
+  font-size: 15px;
+
+  font-weight: 800;
+}
+
+.spec-modal-heading span {
+  display: inline-block;
+
+  width: 4px;
+
+  height: 18px;
+
+  margin-right: 9px;
+
+  vertical-align: middle;
+
+  border-radius: 4px;
+
+  background: #287ff0;
+}
+
+
+/* Grid */
+
+.spec-modal-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+}
+
+
+/* Individual specification */
+
+.spec-modal-item {
+  min-height: 78px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px;
+
+  border: 1px solid #e2e8ee;
+
+  border-radius: 11px;
+
+  background: #f9fbfd;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.spec-modal-item:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(40, 127, 240, 0.3);
+
+  box-shadow:
+    0 8px 20px rgba(3, 19, 35, 0.07);
+}
+
+
+/* Icon */
+
+.spec-modal-icon {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: rgba(40, 127, 240, 0.1);
+
+  color: #287ff0;
+
+  font-size: 14px;
+}
+
+
+/* Text */
+
+.spec-modal-text {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.spec-modal-text span {
+  margin-bottom: 4px;
+
+  color: #8a98a6;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.9px;
+}
+
+.spec-modal-text strong {
+  color: #263238;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.fighter-spec-modal .modal-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  padding: 14px 25px;
+
+  border-top: 1px solid #e8edf1;
+
+  background: #ffffff;
+}
+
+.modal-close-btn {
+  min-width: 95px;
+
+  height: 38px;
+
+  border: 1px solid #dce3e8 !important;
+
+  border-radius: 8px !important;
+
+  background: #ffffff !important;
+
+  color: #52616d !important;
+
+  font-size: 11px !important;
+
+  font-weight: 700 !important;
+}
+
+.modal-close-btn:hover {
+  border-color: #287ff0 !important;
+
+  background: #f2f7fd !important;
+
+  color: #1769e0 !important;
+}
+
+
+/* =========================================================
    TABLET
-========================================= */
+========================================================= */
 
 @media (max-width: 991px) {
-
-  .fighter-card {
-    min-height: 500px;
-  }
-
-  .fighter-card-header {
-    padding: 16px 18px;
-  }
-
-  .fighter-card-header h2 {
-    font-size: 18px;
-  }
 
   .fighter-card-image {
     height: 215px;
   }
 
-  .spec-item {
-    padding: 11px 14px;
+  .fighter-spec-modal .modal-dialog {
+    max-width: 760px;
+
+    margin: 1.25rem auto;
   }
 
+  .spec-modal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
+========================================================= */
 
 @media (max-width: 576px) {
 
@@ -466,18 +722,8 @@
     font-size: 16px;
   }
 
-  .generation-badge {
-    padding: 5px 8px;
-
-    font-size: 8px;
-  }
-
   .fighter-card-image {
     height: 200px;
-  }
-
-  .fighter-card-image img {
-    padding: 12px;
   }
 
   .fighter-specifications {
@@ -494,39 +740,77 @@
     border-right: none;
   }
 
-  .spec-item:nth-child(3) {
-    border-bottom: 1px solid #edf1f4;
-  }
-
-  .spec-icon {
-    width: 16px;
-    height: 16px;
-  }
-
-  .spec-item span {
-    font-size: 8px;
-  }
-
-  .spec-item strong {
-    font-size: 11px;
-  }
-
   .fighter-card-footer {
     padding: 14px 15px;
   }
 
-  .spec-button {
-    min-height: 40px;
 
-    font-size: 10px;
+  /* Modal */
+
+  .fighter-spec-modal .modal-dialog {
+    width: auto;
+
+    max-width: none;
+
+    margin: 10px;
   }
 
+  .fighter-spec-modal .modal-content {
+    border-radius: 15px !important;
+  }
+
+  .fighter-spec-modal .modal-header {
+    padding: 16px 18px;
+  }
+
+  .fighter-spec-modal .modal-title {
+    font-size: 18px !important;
+  }
+
+  .spec-modal-image-section {
+    height: 200px;
+  }
+
+  .spec-modal-image {
+    height: 200px;
+
+    padding: 12px;
+  }
+
+  .spec-modal-generation {
+    top: 12px;
+    left: 12px;
+
+    padding: 6px 9px;
+
+    font-size: 8px;
+  }
+
+  .spec-modal-content {
+    padding: 20px 16px;
+  }
+
+  .spec-modal-grid {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+  .spec-modal-item {
+    min-height: 65px;
+
+    padding: 11px;
+  }
+
+  .fighter-spec-modal .modal-footer {
+    padding: 12px 16px;
+  }
 }
 
 
-/* =========================================
-   EXTRA SMALL MOBILE
-========================================= */
+/* =========================================================
+   EXTRA SMALL
+========================================================= */
 
 @media (max-width: 400px) {
 
@@ -538,8 +822,15 @@
     height: 175px;
   }
 
-  .spec-item {
-    min-height: 58px;
+  .fighter-spec-modal .modal-dialog {
+    margin: 7px;
   }
 
+  .spec-modal-image-section {
+    height: 175px;
+  }
+
+  .spec-modal-image {
+    height: 175px;
+  }
 }
