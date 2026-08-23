@@ -17,78 +17,49 @@ import {
 
 import iafLogo from "../assets/Indian_Air_Force-Logo.wine.png";
 
+;
 
 function Navigation() {
-
   const location = useLocation();
 
   const isActive = (path) => {
-    return location.pathname === path
-      ? "active-nav"
-      : "";
+    return location.pathname === path ? "active-nav" : "";
   };
-
 
   return (
     <BootstrapNavbar
       expand="lg"
       className="iaf-navbar"
     >
-
       <Container fluid>
 
-        {/* ================================= */}
         {/* BRAND */}
-        {/* ================================= */}
-
         <BootstrapNavbar.Brand
           as={Link}
           to="/"
           className="iaf-brand"
         >
-
           <div className="brand-icon">
-
             <img
               src={iafLogo}
               alt="Indian Air Force Logo"
             />
-
           </div>
-
 
           <div className="brand-text">
-
-            <strong>
-              IAF INVENTORY
-            </strong>
-
-            <span>
-              MANAGEMENT SYSTEM
-            </span>
-
+            <strong>IAF INVENTORY</strong>
+            <span>MANAGEMENT SYSTEM</span>
           </div>
-
         </BootstrapNavbar.Brand>
 
-
-        {/* ================================= */}
         {/* MOBILE TOGGLE */}
-        {/* ================================= */}
-
         <BootstrapNavbar.Toggle
           aria-controls="iaf-navbar"
         />
 
+        <BootstrapNavbar.Collapse id="iaf-navbar">
 
-        <BootstrapNavbar.Collapse
-          id="iaf-navbar"
-        >
-
-          {/* ================================= */}
           {/* NAVIGATION */}
-          {/* ================================= */}
-
           <Nav className="mx-auto iaf-nav">
 
             <Nav.Link
@@ -99,7 +70,6 @@ function Navigation() {
               HOME
             </Nav.Link>
 
-
             <Nav.Link
               as={Link}
               to="/dashboard"
@@ -107,7 +77,6 @@ function Navigation() {
             >
               DASHBOARD
             </Nav.Link>
-
 
             <Nav.Link
               as={Link}
@@ -117,7 +86,6 @@ function Navigation() {
               FIGHTERS
             </Nav.Link>
 
-
             <Nav.Link
               as={Link}
               to="/future"
@@ -126,16 +94,13 @@ function Navigation() {
               FUTURE PLATFORMS
             </Nav.Link>
 
-
             <Nav.Link href="#">
               MAINTENANCE
             </Nav.Link>
 
-
             <Nav.Link href="#">
               REPORTS
             </Nav.Link>
-
 
             <Nav.Link href="#">
               ABOUT
@@ -143,52 +108,31 @@ function Navigation() {
 
           </Nav>
 
-
-          {/* ================================= */}
           {/* RIGHT SIDE */}
-          {/* ================================= */}
-
           <div className="navbar-actions">
 
-            {/* Notification */}
-
+            {/* NOTIFICATION */}
             <div className="notification">
-
               <FaBell />
 
-              <span>
-                3
-              </span>
-
+              <span>3</span>
             </div>
 
-
-            {/* ================================= */}
-            {/* PROFILE DROPDOWN */}
-            {/* ================================= */}
-
+            {/* PROFILE */}
             <Dropdown align="end">
 
               <Dropdown.Toggle
                 as="div"
                 className="profile-dropdown-toggle"
               >
-
-                <FaUserCircle
-                  className="profile-icon"
-                />
-
+                <FaUserCircle className="profile-icon" />
               </Dropdown.Toggle>
 
-
-              <Dropdown.Menu
-                className="profile-menu"
-              >
+              <Dropdown.Menu className="profile-menu">
 
                 <Dropdown.Header>
                   ACCOUNT
                 </Dropdown.Header>
-
 
                 <Dropdown.Item
                   as={Link}
@@ -196,7 +140,6 @@ function Navigation() {
                 >
                   🔐 Login
                 </Dropdown.Item>
-
 
                 <Dropdown.Item
                   as={Link}
@@ -212,9 +155,7 @@ function Navigation() {
           </div>
 
         </BootstrapNavbar.Collapse>
-
       </Container>
-
     </BootstrapNavbar>
   );
 }

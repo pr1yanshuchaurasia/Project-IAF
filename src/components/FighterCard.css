@@ -1,0 +1,545 @@
+/* =========================================
+   FIGHTER CARD
+========================================= */
+
+.fighter-card {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+
+  overflow: hidden;
+
+  border: 1px solid #dce4ec !important;
+  border-radius: 18px !important;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 35px rgba(3, 19, 35, 0.10);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.fighter-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(40, 127, 240, 0.35) !important;
+
+  box-shadow:
+    0 20px 45px rgba(3, 19, 35, 0.16);
+}
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.fighter-card-header {
+  min-height: 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 18px 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #031323,
+      #071b30
+    );
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+
+/* Fighter Name */
+
+.fighter-card-header h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================
+   GENERATION BADGE
+========================================= */
+
+.generation-badge {
+  flex-shrink: 0;
+
+  padding: 6px 10px;
+
+  border-radius: 20px !important;
+
+  background: #287ff0 !important;
+
+  color: #ffffff !important;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   AIRCRAFT IMAGE
+========================================= */
+
+.fighter-card-image {
+  position: relative;
+
+  width: 100%;
+
+  height: 230px;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #edf4fb,
+      #dce7f1
+    );
+}
+
+
+/* Aircraft Image */
+
+.fighter-card-image img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 15px;
+
+  display: block;
+
+  position: relative;
+
+  z-index: 1;
+
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+
+/* Image Hover */
+
+.fighter-card:hover
+.fighter-card-image img {
+  transform: scale(1.07);
+
+  filter:
+    drop-shadow(
+      0 12px 18px
+      rgba(3, 19, 35, 0.20)
+    );
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 65%,
+      rgba(3, 19, 35, 0.08)
+    );
+}
+
+
+/* =========================================
+   SPECIFICATIONS
+========================================= */
+
+.fighter-specifications {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 0;
+
+  padding: 5px 0;
+
+  background: #ffffff;
+}
+
+
+/* =========================================
+   SPEC ITEM
+========================================= */
+
+.spec-item {
+  min-height: 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 16px;
+
+  border-bottom: 1px solid #edf1f4;
+
+  transition:
+    background 0.2s ease;
+}
+
+
+/* Vertical divider */
+
+.spec-item:nth-child(odd) {
+  border-right: 1px solid #edf1f4;
+}
+
+
+/* Hover */
+
+.spec-item:hover {
+  background: #f7faff;
+}
+
+
+/* =========================================
+   SPEC ICON
+========================================= */
+
+.spec-icon {
+  flex-shrink: 0;
+
+  width: 17px;
+
+  height: 17px;
+
+  color: #287ff0;
+}
+
+
+/* =========================================
+   SPEC TEXT
+========================================= */
+
+.spec-item div {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* Label */
+
+.spec-item span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #8a98a6;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  line-height: 1;
+}
+
+
+/* Value */
+
+.spec-item strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: #263238;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   CARD FOOTER
+========================================= */
+
+.fighter-card-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 17px 20px;
+
+  background: #ffffff;
+}
+
+
+/* =========================================
+   SPECIFICATION BUTTON
+========================================= */
+
+.spec-button {
+  width: 100%;
+
+  min-height: 42px;
+
+  display: flex !important;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  border: none !important;
+
+  border-radius: 9px !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      #071b30,
+      #12385d
+    ) !important;
+
+  color: #ffffff !important;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  box-shadow:
+    0 6px 15px
+    rgba(7, 27, 48, 0.15);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* Button Hover */
+
+.spec-button:hover {
+  transform: translateY(-2px);
+
+  background:
+    linear-gradient(
+      90deg,
+      #1769e0,
+      #287ff0
+    ) !important;
+
+  box-shadow:
+    0 9px 20px
+    rgba(23, 105, 224, 0.25);
+}
+
+
+/* Arrow */
+
+.spec-button svg {
+  font-size: 10px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.spec-button:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+  .fighter-card {
+    min-height: 500px;
+  }
+
+  .fighter-card-header {
+    padding: 16px 18px;
+  }
+
+  .fighter-card-header h2 {
+    font-size: 18px;
+  }
+
+  .fighter-card-image {
+    height: 215px;
+  }
+
+  .spec-item {
+    padding: 11px 14px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+  .fighter-card {
+    min-height: auto;
+
+    border-radius: 15px !important;
+  }
+
+  .fighter-card-header {
+    min-height: 62px;
+
+    padding: 14px 15px;
+  }
+
+  .fighter-card-header h2 {
+    font-size: 16px;
+  }
+
+  .generation-badge {
+    padding: 5px 8px;
+
+    font-size: 8px;
+  }
+
+  .fighter-card-image {
+    height: 200px;
+  }
+
+  .fighter-card-image img {
+    padding: 12px;
+  }
+
+  .fighter-specifications {
+    grid-template-columns: 1fr;
+  }
+
+  .spec-item {
+    min-height: 62px;
+
+    padding: 10px 14px;
+  }
+
+  .spec-item:nth-child(odd) {
+    border-right: none;
+  }
+
+  .spec-item:nth-child(3) {
+    border-bottom: 1px solid #edf1f4;
+  }
+
+  .spec-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .spec-item span {
+    font-size: 8px;
+  }
+
+  .spec-item strong {
+    font-size: 11px;
+  }
+
+  .fighter-card-footer {
+    padding: 14px 15px;
+  }
+
+  .spec-button {
+    min-height: 40px;
+
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================
+   EXTRA SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .fighter-card-header h2 {
+    font-size: 14px;
+  }
+
+  .fighter-card-image {
+    height: 175px;
+  }
+
+  .spec-item {
+    min-height: 58px;
+  }
+
+}
