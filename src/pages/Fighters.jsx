@@ -12,7 +12,7 @@ const fighters = [
     crew: "1 / 2",
     role: "Multirole Fighter",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/1/1f/Dassault_Rafale_B_of_the_French_Air_and_Space_Force.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/64/Rafale_-_RIAT_2009_%283751416421%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
   },
 
   {
@@ -25,7 +25,7 @@ const fighters = [
     crew: "2",
     role: "Air Superiority / Multirole",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sukhoi_Su-30MKI.jpg",
+      "https://vajiramias.sgp1.cdn.digitaloceanspaces.com/wp/current-affairs/2025/04/su_30mki_fighter_jet.webp?v=2",
   },
 
   {
@@ -38,7 +38,7 @@ const fighters = [
     crew: "1",
     role: "Multirole Fighter",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/7/7d/Tejas_LCA_Tejas.jpg",
+      "https://th-i.thgim.com/public/incoming/t7pitn/article69995560.ece/alternates/LANDSCAPE_1200/_DSC3525.JPG",
   },
 
   {
@@ -51,20 +51,20 @@ const fighters = [
     crew: "1 / 2",
     role: "Multirole Fighter",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/0/0e/Mirage_2000C_in_flight.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa_5x2DPdyvlN9zL7GAGMveakpUOzGUH0oxGRkEdyWRSy1-tsCkCisbBw&s=10",
   },
 
   {
     name: "SEPECAT JAGUAR",
     manufacturer: "SEPECAT / HAL",
-    generation: "4 GENERATION",
+    generation: "3 GENERATION",
     speed: "1,699 km/h",
     range: "3,500+ km",
     engine: "2 × Adour Mk.804",
     crew: "1 / 2",
     role: "Deep Penetration / Strike",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/4/4c/Indian_Air_Force_Jaguar.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsGxFSMxEw3-r6DcuctOtVYpkVSxm2pbahGwIs_ez655BeNtRb-pNRyzmX&s=10",
   },
 
   {
@@ -77,7 +77,7 @@ const fighters = [
     crew: "1 / 2",
     role: "Air Superiority / Multirole",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/7/7a/Mikoyan_MiG-29_in_flight.jpg",
+      "https://i0.wp.com/iadnews.in/wp-content/uploads/2024/05/12mig-29.jpg?fit=1200%2C799&ssl=1",
   },
 ];
 
