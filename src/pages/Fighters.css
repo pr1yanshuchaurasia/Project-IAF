@@ -1,0 +1,479 @@
+/* ================================================= */
+/* FIGHTERS PAGE */
+/* ================================================= */
+
+.fighters-page {
+  min-height: 100vh;
+  background: #f4f7fa;
+  color: #17202a;
+}
+
+
+/* ================================================= */
+/* HERO */
+/* ================================================= */
+
+.fighter-hero {
+  position: relative;
+
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background-image:
+    url("https://i.pinimg.com/originals/07/05/31/07053134fec1b048765c844e332f7139.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  isolation: isolate;
+}
+
+
+/* Dark professional overlay */
+
+.fighter-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 14, 27, 0.97) 0%,
+      rgba(3, 19, 35, 0.91) 42%,
+      rgba(3, 19, 35, 0.68) 72%,
+      rgba(3, 19, 35, 0.82) 100%
+    );
+}
+
+
+/* Subtle grid */
+
+.fighter-hero-grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  opacity: 0.12;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image:
+    linear-gradient(
+      to right,
+      black,
+      transparent
+    );
+}
+
+
+/* ================================================= */
+/* HERO CONTENT */
+/* ================================================= */
+
+.fighter-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+
+/* ================================================= */
+/* LABEL */
+/* ================================================= */
+
+.hero-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  color: #d7e1ea;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+
+.hero-label span {
+  display: inline-block;
+
+  width: 34px;
+
+  height: 2px;
+
+  background: #287ff0;
+
+  box-shadow:
+    0 0 8px
+    rgba(40, 127, 240, 0.6);
+}
+
+
+/* ================================================= */
+/* HERO HEADING */
+/* ================================================= */
+
+.fighter-hero h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(
+    42px,
+    6vw,
+    78px
+  );
+
+  line-height: 0.98;
+
+  font-weight: 300;
+
+  letter-spacing: 2px;
+}
+
+
+.fighter-hero h1 strong {
+  font-weight: 800;
+
+  color: #ffffff;
+}
+
+
+/* ================================================= */
+/* HERO PARAGRAPH */
+/* ================================================= */
+
+.fighter-hero p {
+  max-width: 650px;
+
+  margin-top: 26px;
+
+  margin-bottom: 0;
+
+  color: #b8c6d3;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  font-weight: 400;
+}
+
+
+/* ================================================= */
+/* HERO DIVIDER */
+/* ================================================= */
+
+.hero-divider {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+
+.hero-divider span {
+  width: 55px;
+
+  height: 1px;
+
+  background: #287ff0;
+}
+
+
+.hero-divider small {
+  color: #708292;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+/* ================================================= */
+/* AIRCRAFT GRID SECTION */
+/* ================================================= */
+
+.fighter-grid-section {
+  padding: 70px 0 90px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f4f7fa 0%,
+      #ffffff 100%
+    );
+}
+
+
+/* ================================================= */
+/* SECTION HEADING */
+/* ================================================= */
+
+.fighter-section-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 42px;
+
+  padding-bottom: 25px;
+
+  border-bottom:
+    1px solid #dfe5ea;
+}
+
+
+.section-kicker {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #287ff0;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.fighter-section-heading h2 {
+  margin: 0;
+
+  color: #17202a;
+
+  font-size: 32px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+
+.fighter-section-heading p {
+  max-width: 420px;
+
+  margin: 0;
+
+  color: #7a8793;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  text-align: right;
+}
+
+
+/* ================================================= */
+/* CARD COLUMN */
+/* ================================================= */
+
+.fighter-grid-section .row {
+  --bs-gutter-y: 28px;
+}
+
+
+/* ================================================= */
+/* TABLET */
+/* ================================================= */
+
+@media (max-width: 991px) {
+
+  .fighter-hero {
+    min-height: 450px;
+
+    background-position:
+      65% center;
+  }
+
+
+  .fighter-hero-content {
+    padding-top: 60px;
+
+    padding-bottom: 60px;
+  }
+
+
+  .fighter-section-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+
+  .fighter-section-heading p {
+    text-align: left;
+
+    max-width: 600px;
+  }
+
+}
+
+
+/* ================================================= */
+/* MOBILE */
+/* ================================================= */
+
+@media (max-width: 576px) {
+
+  .fighter-hero {
+    min-height: 430px;
+
+    background-position:
+      65% center;
+  }
+
+
+  .fighter-hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(2, 14, 27, 0.98),
+        rgba(3, 19, 35, 0.84)
+      );
+  }
+
+
+  .fighter-hero-content {
+    padding:
+      55px 20px;
+  }
+
+
+  .hero-label {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .hero-label span {
+    width: 25px;
+  }
+
+
+  .fighter-hero h1 {
+    font-size: 44px;
+
+    letter-spacing: 1px;
+  }
+
+
+  .fighter-hero p {
+    max-width: 100%;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin-top: 22px;
+  }
+
+
+  .hero-divider {
+    margin-top: 25px;
+  }
+
+
+  .hero-divider small {
+    font-size: 8px;
+
+    letter-spacing: 1.3px;
+  }
+
+
+  .fighter-grid-section {
+    padding:
+      45px 0 60px;
+  }
+
+
+  .fighter-section-heading {
+    margin-bottom: 30px;
+
+    padding-bottom: 20px;
+  }
+
+
+  .fighter-section-heading h2 {
+    font-size: 25px;
+  }
+
+
+  .fighter-section-heading p {
+    font-size: 12px;
+  }
+
+}
+
+
+/* ================================================= */
+/* EXTRA SMALL MOBILE */
+/* ================================================= */
+
+@media (max-width: 400px) {
+
+  .fighter-hero {
+    min-height: 400px;
+  }
+
+
+  .fighter-hero h1 {
+    font-size: 38px;
+  }
+
+
+  .fighter-hero p {
+    font-size: 12px;
+  }
+
+
+  .fighter-grid-section {
+    padding:
+      40px 0 50px;
+  }
+
+}

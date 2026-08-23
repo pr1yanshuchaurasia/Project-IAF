@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import FighterCard from "../components/FighterCard";
+import "./Fighters.css";
 
 const fighters = [
   {
@@ -85,10 +86,15 @@ function Fighters() {
   return (
     <main className="fighters-page">
 
-      {/* HERO */}
+      {/* ============================= */}
+      {/* HERO SECTION */}
+      {/* ============================= */}
+
       <section className="fighter-hero">
 
         <div className="fighter-hero-overlay"></div>
+
+        <div className="fighter-hero-grid"></div>
 
         <Container className="fighter-hero-content">
 
@@ -97,22 +103,56 @@ function Fighters() {
             INDIAN AIR FORCE
           </div>
 
-          <h1>FIGHTER PLATFORMS</h1>
+          <h1>
+            FIGHTER
+            <br />
+            <strong>PLATFORMS</strong>
+          </h1>
 
           <p>
-            Explore the fighter aircraft platforms currently
-            represented in the inventory management system.
+            Explore the Indian Air Force fighter platforms
+            represented across the inventory management system,
+            featuring key specifications, operational roles,
+            and platform capabilities.
           </p>
+
+          <div className="hero-divider">
+            <span></span>
+            <small>IAF INVENTORY MANAGEMENT SYSTEM</small>
+          </div>
 
         </Container>
 
       </section>
 
 
-      {/* AIRCRAFT GRID */}
+      {/* ============================= */}
+      {/* AIRCRAFT SECTION */}
+      {/* ============================= */}
+
       <section className="fighter-grid-section">
 
         <Container>
+
+          <div className="fighter-section-heading">
+
+            <div>
+              <span className="section-kicker">
+                AIRCRAFT INVENTORY
+              </span>
+
+              <h2>
+                Operational Fighter Fleet
+              </h2>
+            </div>
+
+            <p>
+              A curated overview of fighter platforms
+              integrated into the inventory ecosystem.
+            </p>
+
+          </div>
+
 
           <Row className="g-4">
 
