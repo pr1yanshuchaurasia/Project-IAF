@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import FighterCard from "../components/FighterCard";
-import "./Fighters.css";
+import '../styles/Fighters.css';
 
 const fighters = [
   {

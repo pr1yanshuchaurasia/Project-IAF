@@ -15,8 +15,7 @@ import {
   FaShieldAlt,
 } from "react-icons/fa";
 
-import "./FighterCard.css";
-
+import '../styles/FighterCard.css';
 function FighterCard({ fighter }) {
   const [showModal, setShowModal] = useState(false);
 
