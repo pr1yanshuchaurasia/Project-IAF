@@ -1,6 +1,7 @@
 import { Container, Form, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import iafLogo from "../assets/Indian_Air_Force-Logo.wine.png";
+import '../styles/Login.css';
 
 
 function Login() {

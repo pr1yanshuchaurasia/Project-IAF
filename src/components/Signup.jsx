@@ -17,6 +17,7 @@ import {
 } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
+import '../styles/Signup.css';
 
 
 import iafLogo from "../assets/Indian_Air_Force-Logo.wine.png";
