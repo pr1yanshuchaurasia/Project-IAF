@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import FighterCard from "../components/FighterCard";
-import '../styles/Fighters.css';
+import "../styles/Fighters.css";
 
 const fighters = [
   {
@@ -14,6 +14,8 @@ const fighters = [
     role: "Multirole Fighter",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/6/64/Rafale_-_RIAT_2009_%283751416421%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+    model3D:
+      "https://sketchfab.com/models/788fca79dc974a7fa1db55e2a9b00058/embed",
   },
 
   {
@@ -85,19 +87,16 @@ const fighters = [
 function Fighters() {
   return (
     <main className="fighters-page">
-
       {/* ============================= */}
       {/* HERO SECTION */}
       {/* ============================= */}
 
       <section className="fighter-hero">
-
         <div className="fighter-hero-overlay"></div>
 
         <div className="fighter-hero-grid"></div>
 
         <Container className="fighter-hero-content">
-
           <div className="hero-label">
             <span></span>
             INDIAN AIR FORCE
@@ -110,70 +109,46 @@ function Fighters() {
           </h1>
 
           <p>
-            Explore the Indian Air Force fighter platforms
-            represented across the inventory management system,
-            featuring key specifications, operational roles,
-            and platform capabilities.
+            Explore the Indian Air Force fighter platforms represented across
+            the inventory management system, featuring key specifications,
+            operational roles, and platform capabilities.
           </p>
 
           <div className="hero-divider">
             <span></span>
             <small>IAF INVENTORY MANAGEMENT SYSTEM</small>
           </div>
-
         </Container>
-
       </section>
-
 
       {/* ============================= */}
       {/* AIRCRAFT SECTION */}
       {/* ============================= */}
 
       <section className="fighter-grid-section">
-
         <Container>
-
           <div className="fighter-section-heading">
-
             <div>
-              <span className="section-kicker">
-                AIRCRAFT INVENTORY
-              </span>
+              <span className="section-kicker">AIRCRAFT INVENTORY</span>
 
-              <h2>
-                Operational Fighter Fleet
-              </h2>
+              <h2>Operational Fighter Fleet</h2>
             </div>
 
             <p>
-              A curated overview of fighter platforms
-              integrated into the inventory ecosystem.
+              A curated overview of fighter platforms integrated into the
+              inventory ecosystem.
             </p>
-
           </div>
 
-
           <Row className="g-4">
-
             {fighters.map((fighter) => (
-              <Col
-                key={fighter.name}
-                xs={12}
-                sm={12}
-                md={6}
-                lg={4}
-              >
+              <Col key={fighter.name} xs={12} sm={12} md={6} lg={4}>
                 <FighterCard fighter={fighter} />
               </Col>
             ))}
-
           </Row>
-
         </Container>
-
       </section>
-
     </main>
   );
 }

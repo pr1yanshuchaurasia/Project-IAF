@@ -10,38 +10,38 @@ import {
   FaTimes,
   FaPlane,
   FaIndustry,
-  FaCrosshairs,
   FaRocket,
   FaShieldAlt,
+  FaCrosshairs,
 } from "react-icons/fa";
 
-import '../styles/FighterCard.css';
+import "../styles/FighterCard.css";
+
+import iafLogo from "../assets/Indian_Air_Force-Logo.wine.png";
+
 function FighterCard({ fighter }) {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <Card className="fighter-card">
+      {/* ===================================================== */}
+      {/* FIGHTER CARD */}
+      {/* ===================================================== */}
 
+      <Card className="fighter-card">
         {/* CARD HEADER */}
         <div className="fighter-card-header">
           <div>
-            <span className="fighter-category">
-              INDIAN AIR FORCE
-            </span>
+            <span className="fighter-category">INDIAN AIR FORCE</span>
 
             <h2>{fighter.name}</h2>
           </div>
 
-          <Badge className="generation-badge">
-            {fighter.generation}
-          </Badge>
+          <Badge className="generation-badge">{fighter.generation}</Badge>
         </div>
-
 
         {/* AIRCRAFT IMAGE */}
         <div className="fighter-card-image">
-
           <img
             src={fighter.image}
             alt={fighter.name}
@@ -56,14 +56,10 @@ function FighterCard({ fighter }) {
             <FaPlane />
             <span>{fighter.role}</span>
           </div>
-
         </div>
-
 
         {/* SPECIFICATIONS */}
         <div className="fighter-specifications">
-
-          {/* SPEED */}
           <div className="spec-item">
             <FaTachometerAlt className="spec-icon" />
 
@@ -73,8 +69,6 @@ function FighterCard({ fighter }) {
             </div>
           </div>
 
-
-          {/* RANGE */}
           <div className="spec-item">
             <FaMapMarkerAlt className="spec-icon" />
 
@@ -84,8 +78,6 @@ function FighterCard({ fighter }) {
             </div>
           </div>
 
-
-          {/* ENGINE */}
           <div className="spec-item">
             <FaCogs className="spec-icon" />
 
@@ -95,8 +87,6 @@ function FighterCard({ fighter }) {
             </div>
           </div>
 
-
-          {/* CREW */}
           <div className="spec-item">
             <FaUser className="spec-icon" />
 
@@ -105,244 +95,318 @@ function FighterCard({ fighter }) {
               <strong>{fighter.crew}</strong>
             </div>
           </div>
-
         </div>
-
 
         {/* BUTTON */}
         <div className="fighter-card-footer">
-
-          <Button
-            className="spec-button"
-            onClick={() => setShowModal(true)}
-          >
+          <Button className="spec-button" onClick={() => setShowModal(true)}>
             VIEW FULL SPECIFICATIONS
-
             <FaArrowRight />
           </Button>
-
         </div>
-
       </Card>
 
-
-      {/* ======================================= */}
-      {/* SPECIFICATION MODAL */}
-      {/* ======================================= */}
+      {/* ===================================================== */}
+      {/* PROFESSIONAL IAF MODAL */}
+      {/* ===================================================== */}
 
       <Modal
         show={showModal}
         onHide={() => setShowModal(false)}
         centered
-        size="lg"
+        size="xl"
         className="fighter-modal"
       >
+        <div className="iaf-modal-container">
+          {/* ================================================= */}
+          {/* MODAL HEADER */}
+          {/* ================================================= */}
 
-        <Modal.Header className="fighter-modal-header">
+          <div className="fighter-modal-header">
+            <div className="modal-brand">
+              <div className="modal-logo">
+                <img src={iafLogo} alt="Indian Air Force" />
+              </div>
 
-          <div className="modal-title-area">
+              <div className="modal-brand-text">
+                <span className="modal-overline">INDIAN AIR FORCE</span>
 
-            <div className="modal-plane-icon">
-              <FaPlane />
+                <strong>AIRCRAFT DATABASE</strong>
+              </div>
             </div>
 
-            <div>
+            <div className="modal-aircraft-heading">
+              <span>AIRCRAFT PROFILE / {fighter.generation}</span>
 
-              <span>
-                INDIAN AIR FORCE • AIRCRAFT PROFILE
-              </span>
-
-              <Modal.Title>
-                {fighter.name}
-              </Modal.Title>
-
+              <h2>{fighter.name}</h2>
             </div>
 
+            <button
+              className="modal-close-button"
+              onClick={() => setShowModal(false)}
+            >
+              <FaTimes />
+            </button>
           </div>
 
-          <button
-            className="modal-close-button"
-            onClick={() => setShowModal(false)}
-          >
-            <FaTimes />
-          </button>
+          {/* ================================================= */}
+          {/* MODAL BODY */}
+          {/* ================================================= */}
 
-        </Modal.Header>
+          <div className="fighter-modal-body">
+            {/* =============================================== */}
+            {/* 3D AIRCRAFT SECTION */}
+            {/* =============================================== */}
 
-
-        <Modal.Body className="fighter-modal-body">
-
-          {/* TOP IMAGE */}
-          <div className="modal-aircraft-image">
-
-            <img
-              src={fighter.image}
-              alt={fighter.name}
-            />
-
-            <div className="modal-image-overlay"></div>
-
-            <div className="modal-aircraft-label">
-              <span>{fighter.generation}</span>
-              <strong>{fighter.role}</strong>
-            </div>
-
-          </div>
-
-
-          {/* BASIC INFORMATION */}
-          <div className="modal-section">
-
-            <div className="modal-section-title">
-              <FaShieldAlt />
-              PLATFORM OVERVIEW
-            </div>
-
-            <div className="overview-grid">
-
-              <div className="overview-item">
-                <span>Aircraft</span>
-                <strong>{fighter.name}</strong>
-              </div>
-
-              <div className="overview-item">
-                <span>Manufacturer</span>
-                <strong>{fighter.manufacturer}</strong>
-              </div>
-
-              <div className="overview-item">
-                <span>Generation</span>
-                <strong>{fighter.generation}</strong>
-              </div>
-
-              <div className="overview-item">
-                <span>Primary Role</span>
-                <strong>{fighter.role}</strong>
-              </div>
-
-            </div>
-
-          </div>
-
-
-          {/* PERFORMANCE */}
-          <div className="modal-section">
-
-            <div className="modal-section-title">
-              <FaRocket />
-              PERFORMANCE SPECIFICATIONS
-            </div>
-
-            <div className="modal-spec-grid">
-
-              <div className="modal-spec-card">
-
-                <div className="modal-spec-icon">
-                  <FaTachometerAlt />
+            <section className="aircraft-3d-section">
+              <div className="section-heading">
+                <div className="section-heading-icon">
+                  <FaPlane />
                 </div>
 
                 <div>
-                  <span>MAXIMUM SPEED</span>
-                  <strong>{fighter.speed}</strong>
+                  <span>INTERACTIVE PLATFORM</span>
+
+                  <h3>{fighter.name} / 3D VIEW</h3>
                 </div>
 
+                <div className="model-status">
+                  <span></span>
+                  LIVE MODEL
+                </div>
               </div>
 
+              {/* 3D MODEL */}
+              <div className="model-viewer-wrapper">
+                {fighter.name === "RAFALE" ? (
+                  <iframe
+                    title="Dassault RAFALE BS (IAF)"
+                    src="https://sketchfab.com/models/788fca79dc974a7fa1db55e2a9b00058/embed"
+                    frameBorder="0"
+                    allowFullScreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    xr-spatial-tracking="true"
+                    execution-while-out-of-viewport="true"
+                    execution-while-not-rendered="true"
+                    web-share="true"
+                  />
+                ) : fighter.name === "SU-30MKI" ? (
+                  <iframe
+                    title="SU-30 aircraft"
+                    src="https://sketchfab.com/models/816a24f6f58946a6aa0d55cb6bb27d73/embed"
+                    frameBorder="0"
+                    allowFullScreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    xr-spatial-tracking="true"
+                    execution-while-out-of-viewport="true"
+                    execution-while-not-rendered="true"
+                    web-share="true"
+                  />
+                ) :  fighter.name === "TEJAS MK1A" ? (
+                  <iframe
+                    title="HAL Tejas"
+                    src="https://sketchfab.com/models/f75b93a36c1440e18c9e058b564543c1/embed"
+                    frameBorder="0"
+                    allowFullScreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    xr-spatial-tracking="true"
+                    execution-while-out-of-viewport="true"
+                    execution-while-not-rendered="true"
+                    web-share="true"
+                  />
+                ) : (
+                  <div className="model-placeholder">
+                    <FaPlane />
 
-              <div className="modal-spec-card">
+                    <strong>3D MODEL</strong>
 
-                <div className="modal-spec-icon">
-                  <FaMapMarkerAlt />
+                    <span>Interactive model will be available</span>
+                  </div>
+                )}
+              </div>
+
+              <div className="model-instructions">
+                <span>
+                  <FaCrosshairs />
+                  DRAG TO ROTATE
+                </span>
+
+                <span>•</span>
+
+                <span>SCROLL TO ZOOM</span>
+
+                <span>•</span>
+
+                <span>EXPLORE FROM EVERY ANGLE</span>
+              </div>
+            </section>
+
+            {/* =============================================== */}
+            {/* PLATFORM OVERVIEW */}
+            {/* =============================================== */}
+
+            <section className="modal-section">
+              <div className="modal-section-title">
+                <div className="title-icon">
+                  <FaShieldAlt />
                 </div>
 
                 <div>
-                  <span>OPERATIONAL RANGE</span>
-                  <strong>{fighter.range}</strong>
+                  <span>PLATFORM IDENTIFICATION</span>
+                  <h3>Aircraft Overview</h3>
                 </div>
-
               </div>
 
+              <div className="overview-grid">
+                <div className="overview-item">
+                  <span>AIRCRAFT</span>
 
-              <div className="modal-spec-card">
+                  <strong>{fighter.name}</strong>
+                </div>
 
-                <div className="modal-spec-icon">
-                  <FaCogs />
+                <div className="overview-item">
+                  <span>MANUFACTURER</span>
+
+                  <strong>{fighter.manufacturer}</strong>
+                </div>
+
+                <div className="overview-item">
+                  <span>GENERATION</span>
+
+                  <strong>{fighter.generation}</strong>
+                </div>
+
+                <div className="overview-item">
+                  <span>PRIMARY ROLE</span>
+
+                  <strong>{fighter.role}</strong>
+                </div>
+              </div>
+            </section>
+
+            {/* =============================================== */}
+            {/* PERFORMANCE */}
+            {/* =============================================== */}
+
+            <section className="modal-section">
+              <div className="modal-section-title">
+                <div className="title-icon">
+                  <FaRocket />
                 </div>
 
                 <div>
-                  <span>POWERPLANT</span>
-                  <strong>{fighter.engine}</strong>
+                  <span>TECHNICAL DATA</span>
+                  <h3>Performance Specifications</h3>
                 </div>
-
               </div>
 
+              <div className="modal-spec-grid">
+                <div className="modal-spec-card">
+                  <div className="modal-spec-icon">
+                    <FaTachometerAlt />
+                  </div>
 
-              <div className="modal-spec-card">
+                  <div>
+                    <span>MAXIMUM SPEED</span>
+                    <strong>{fighter.speed}</strong>
+                  </div>
+                </div>
 
-                <div className="modal-spec-icon">
-                  <FaUser />
+                <div className="modal-spec-card">
+                  <div className="modal-spec-icon">
+                    <FaMapMarkerAlt />
+                  </div>
+
+                  <div>
+                    <span>OPERATIONAL RANGE</span>
+                    <strong>{fighter.range}</strong>
+                  </div>
+                </div>
+
+                <div className="modal-spec-card">
+                  <div className="modal-spec-icon">
+                    <FaCogs />
+                  </div>
+
+                  <div>
+                    <span>POWERPLANT</span>
+                    <strong>{fighter.engine}</strong>
+                  </div>
+                </div>
+
+                <div className="modal-spec-card">
+                  <div className="modal-spec-icon">
+                    <FaUser />
+                  </div>
+
+                  <div>
+                    <span>CREW CONFIGURATION</span>
+                    <strong>{fighter.crew}</strong>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* =============================================== */}
+            {/* PLATFORM INFORMATION */}
+            {/* =============================================== */}
+
+            <section className="modal-section">
+              <div className="modal-section-title">
+                <div className="title-icon">
+                  <FaIndustry />
                 </div>
 
                 <div>
-                  <span>CREW</span>
-                  <strong>{fighter.crew}</strong>
+                  <span>PLATFORM DATA</span>
+                  <h3>Mission & Manufacturing</h3>
+                </div>
+              </div>
+
+              <div className="platform-information">
+                <div>
+                  <span>MANUFACTURER</span>
+
+                  <strong>{fighter.manufacturer}</strong>
                 </div>
 
+                <div>
+                  <span>MISSION PROFILE</span>
+
+                  <strong>{fighter.role}</strong>
+                </div>
               </div>
-
-            </div>
-
+            </section>
           </div>
 
+          {/* ================================================= */}
+          {/* MODAL FOOTER */}
+          {/* ================================================= */}
 
-          {/* PLATFORM INFORMATION */}
-          <div className="modal-section">
-
-            <div className="modal-section-title">
-              <FaIndustry />
-              PLATFORM INFORMATION
+          <div className="fighter-modal-footer">
+            <div className="modal-footer-status">
+              <span className="status-dot"></span>
+              SYSTEM STATUS:
+              <strong> OPERATIONAL</strong>
             </div>
 
-            <div className="platform-information">
+            <div className="footer-classification">IAF • AIRCRAFT DATABASE</div>
 
-              <div>
-                <span>MANUFACTURER</span>
-                <strong>{fighter.manufacturer}</strong>
-              </div>
-
-              <div>
-                <span>MISSION PROFILE</span>
-                <strong>{fighter.role}</strong>
-              </div>
-
-            </div>
-
+            <Button
+              className="modal-close-action"
+              onClick={() => setShowModal(false)}
+            >
+              CLOSE PROFILE
+            </Button>
           </div>
-
-        </Modal.Body>
-
-
-        <Modal.Footer className="fighter-modal-footer">
-
-          <div className="modal-footer-status">
-
-            <span className="status-dot"></span>
-
-            PLATFORM INFORMATION
-
-          </div>
-
-          <Button
-            className="modal-close-action"
-            onClick={() => setShowModal(false)}
-          >
-            CLOSE
-          </Button>
-
-        </Modal.Footer>
-
+        </div>
       </Modal>
-
     </>
   );
 }
