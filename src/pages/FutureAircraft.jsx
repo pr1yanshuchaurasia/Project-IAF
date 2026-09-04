@@ -26,7 +26,7 @@ import {
   FaBolt,
 } from "react-icons/fa";
 
-import "../styles/FutureAircraft.css";
+// import "../styles/FutureAircraft.css";
 
 import iafLogo from "../assets/Indian_Air_Force-Logo.wine.png";
 
