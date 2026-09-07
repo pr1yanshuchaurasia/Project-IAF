@@ -1,0 +1,1443 @@
+```css
+/* =========================================================
+   IAF HOME PAGE
+   MODERN DEFENCE / COMMAND INTERFACE
+========================================================= */
+
+.iaf-home {
+  min-height: 100vh;
+  background: #05090d;
+  color: #f1f4f5;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.iaf-hero {
+  position: relative;
+  min-height: 780px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  border-bottom: 1px solid rgba(216, 184, 92, 0.2);
+}
+
+.iaf-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 7, 10, 0.98) 0%,
+      rgba(3, 7, 10, 0.94) 38%,
+      rgba(3, 7, 10, 0.68) 65%,
+      rgba(3, 7, 10, 0.35) 100%
+    );
+}
+
+.iaf-hero-grid {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.18;
+
+  background-image:
+    linear-gradient(
+      rgba(216, 184, 92, 0.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(216, 184, 92, 0.12) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image:
+    linear-gradient(
+      90deg,
+      black,
+      transparent 80%
+    );
+}
+
+.iaf-hero-container {
+  position: relative;
+  z-index: 3;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.iaf-hero-content {
+  max-width: 760px;
+  padding: 100px 0;
+}
+
+.iaf-command-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 30px;
+
+  color: #89959d;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.command-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #d8b85c;
+
+  box-shadow:
+    0 0 14px rgba(216, 184, 92, 0.8);
+}
+
+.command-line {
+  width: 45px;
+  height: 1px;
+
+  background: rgba(216, 184, 92, 0.5);
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.iaf-hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 30px;
+}
+
+.iaf-hero-brand img {
+  width: 62px;
+  height: 62px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 0 12px rgba(255, 255, 255, 0.08)
+    );
+}
+
+.iaf-hero-brand div {
+  display: flex;
+  flex-direction: column;
+}
+
+.iaf-hero-brand span {
+  color: #89959d;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.iaf-hero-brand strong {
+  margin-top: 5px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.iaf-hero h1 {
+  margin: 0;
+
+  font-size: clamp(58px, 7vw, 105px);
+  line-height: 0.9;
+
+  font-weight: 900;
+
+  letter-spacing: -5px;
+  text-transform: uppercase;
+}
+
+.iaf-hero h1 span {
+  display: block;
+
+  color: #d8b85c;
+
+  text-shadow:
+    0 0 30px rgba(216, 184, 92, 0.12);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.iaf-hero-description {
+  max-width: 650px;
+
+  margin: 30px 0;
+
+  color: #aeb8be;
+
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.iaf-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-top: 32px;
+}
+
+.iaf-primary-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  min-height: 48px;
+
+  padding: 13px 22px !important;
+
+  border: 1px solid #d8b85c !important;
+  border-radius: 2px !important;
+
+  background: #d8b85c !important;
+  color: #05080c !important;
+
+  font-size: 10px !important;
+  font-weight: 900 !important;
+
+  letter-spacing: 1.5px;
+
+  transition: all 0.3s ease;
+}
+
+.iaf-primary-btn:hover {
+  transform: translateY(-2px);
+
+  background: #ead080 !important;
+
+  box-shadow:
+    0 10px 30px rgba(216, 184, 92, 0.15);
+}
+
+.iaf-secondary-btn {
+  min-height: 48px;
+
+  padding: 13px 22px !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 2px !important;
+
+  background: rgba(255, 255, 255, 0.03) !important;
+
+  color: #d9dfe2 !important;
+
+  font-size: 10px !important;
+  font-weight: 800 !important;
+
+  letter-spacing: 1.5px;
+}
+
+.iaf-secondary-btn:hover {
+  border-color: rgba(216, 184, 92, 0.5) !important;
+  color: #d8b85c !important;
+}
+
+
+/* =========================================================
+   HERO STATUS
+========================================================= */
+
+.iaf-hero-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+
+  margin-top: 35px;
+
+  color: #66737c;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.iaf-hero-status div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #79b78b;
+
+  box-shadow:
+    0 0 10px rgba(121, 183, 139, 0.6);
+}
+
+.iaf-hero-status svg {
+  color: #d8b85c;
+}
+
+
+/* =========================================================
+   COMMAND PANEL
+========================================================= */
+
+.iaf-command-panel {
+  position: relative;
+
+  max-width: 440px;
+
+  margin-left: auto;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 29, 0.95),
+      rgba(5, 9, 13, 0.96)
+    );
+
+  border: 1px solid rgba(216, 184, 92, 0.18);
+
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.55);
+
+  backdrop-filter: blur(12px);
+}
+
+.command-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 17px 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  color: #68747c;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.live-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #d8b85c;
+}
+
+.live-status i {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #d8b85c;
+
+  box-shadow:
+    0 0 10px rgba(216, 184, 92, 0.7);
+}
+
+.command-panel-main {
+  padding: 35px 25px 30px;
+
+  text-align: center;
+}
+
+.panel-kicker {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #66727a;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.command-panel-main strong {
+  display: block;
+
+  color: #e8d08a;
+
+  font-size: 58px;
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+.command-panel-main small {
+  display: block;
+
+  margin-top: 12px;
+
+  color: #59656d;
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.readiness-bar {
+  height: 4px;
+
+  margin: 18px auto 0;
+
+  max-width: 300px;
+
+  background: #20282e;
+}
+
+.readiness-bar span {
+  display: block;
+
+  width: 98.7%;
+  height: 100%;
+
+  background: #d8b85c;
+
+  box-shadow:
+    0 0 12px rgba(216, 184, 92, 0.25);
+}
+
+
+/* =========================================================
+   COMMAND PANEL GRID
+========================================================= */
+
+.command-panel-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.command-panel-grid div {
+  padding: 20px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.command-panel-grid div:nth-child(2n) {
+  border-right: none;
+}
+
+.command-panel-grid svg {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #d8b85c;
+
+  font-size: 16px;
+}
+
+.command-panel-grid strong {
+  display: block;
+
+  color: #e7ecee;
+
+  font-size: 19px;
+}
+
+.command-panel-grid span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #606d75;
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.command-panel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 20px;
+
+  color: #505d65;
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.command-panel-footer strong {
+  color: #89949a;
+}
+
+
+/* =========================================================
+   HERO SCROLL
+========================================================= */
+
+.hero-scroll {
+  position: absolute;
+
+  bottom: 30px;
+  left: 50%;
+
+  z-index: 4;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #59656d;
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero-scroll div {
+  width: 1px;
+  height: 35px;
+
+  background: linear-gradient(
+    #d8b85c,
+    transparent
+  );
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.iaf-introduction {
+  padding: 110px 0;
+
+  background:
+    radial-gradient(
+      circle at 10% 50%,
+      rgba(35, 73, 92, 0.13),
+      transparent 35%
+    ),
+    #05090d;
+}
+
+.iaf-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 50px;
+
+  margin-bottom: 55px;
+}
+
+.section-kicker {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #d8b85c;
+
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 3px;
+}
+
+.iaf-section-heading h2 {
+  margin: 0;
+
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -2px;
+}
+
+.iaf-section-heading h2 span {
+  color: #d8b85c;
+}
+
+.iaf-section-heading p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #727e86;
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FEATURE CARDS
+========================================================= */
+
+.iaf-feature-card {
+  position: relative;
+
+  height: 100%;
+
+  padding: 28px !important;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #10171d,
+      #080d12
+    ) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border-radius: 3px !important;
+
+  transition: all 0.35s ease;
+}
+
+.iaf-feature-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(216, 184, 92, 0.3) !important;
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.35);
+}
+
+.feature-number {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  color: #293138;
+
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.feature-icon {
+  margin: 35px 0 25px;
+
+  color: #d8b85c;
+
+  font-size: 25px;
+}
+
+.iaf-feature-card h3 {
+  margin-bottom: 12px;
+
+  color: #e9edef;
+
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.iaf-feature-card p {
+  min-height: 78px;
+
+  margin-bottom: 25px;
+
+  color: #707c84;
+
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.feature-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 15px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  color: #d8b85c;
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.feature-link svg {
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.iaf-statistics {
+  padding: 95px 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #080e13,
+      #05090d
+    );
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.statistics-header {
+  margin-bottom: 40px;
+}
+
+.statistics-header h2 {
+  margin: 0 0 10px;
+
+  font-size: clamp(30px, 4vw, 45px);
+
+  font-weight: 900;
+}
+
+.statistics-header p {
+  margin: 0;
+
+  color: #68747c;
+
+  font-size: 12px;
+}
+
+.iaf-stat-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.iaf-stat {
+  position: relative;
+
+  min-height: 180px;
+
+  padding: 28px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.iaf-stat span {
+  display: block;
+
+  margin-bottom: 28px;
+
+  color: #465159;
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.iaf-stat strong {
+  display: block;
+
+  color: #d8b85c;
+
+  font-size: 38px;
+  font-weight: 900;
+}
+
+.iaf-stat small {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #657179;
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   FUTURE SECTION
+========================================================= */
+
+.iaf-future-section {
+  padding: 115px 0;
+
+  background:
+    radial-gradient(
+      circle at 85% 50%,
+      rgba(31, 64, 80, 0.16),
+      transparent 35%
+    ),
+    #05090d;
+}
+
+.future-visual {
+  position: relative;
+
+  min-height: 520px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(216, 184, 92, 0.18);
+
+  background: #03070a;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.45);
+}
+
+.future-image-frame {
+  position: absolute;
+  inset: 0;
+}
+
+.future-image-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0.72;
+
+  filter:
+    brightness(0.65)
+    contrast(1.15)
+    saturate(0.65);
+
+  transition: transform 0.8s ease;
+}
+
+.future-visual:hover img {
+  transform: scale(1.05);
+}
+
+.future-visual-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 20%,
+      rgba(3, 7, 10, 0.92) 100%
+    );
+}
+
+.future-visual-label {
+  position: absolute;
+
+  left: 30px;
+  bottom: 30px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.future-visual-label span {
+  color: #d8b85c;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+.future-visual-label strong {
+  margin-top: 7px;
+
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.future-coordinates {
+  position: absolute;
+
+  top: 22px;
+  right: 22px;
+
+  padding: 10px;
+
+  border-left: 1px solid rgba(216, 184, 92, 0.4);
+
+  color: #7e8990;
+
+  font-size: 7px;
+  line-height: 1.8;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   FUTURE CONTENT
+========================================================= */
+
+.future-content {
+  padding-left: 20px;
+}
+
+.future-content h2 {
+  margin: 0 0 22px;
+
+  font-size: clamp(36px, 5vw, 58px);
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -2px;
+}
+
+.future-content h2 span {
+  display: block;
+
+  color: #d8b85c;
+}
+
+.future-content > p {
+  max-width: 550px;
+
+  margin-bottom: 35px;
+
+  color: #78848c;
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.future-points {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  margin-bottom: 35px;
+}
+
+.future-points > div {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  padding: 16px;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.future-points svg {
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  color: #d8b85c;
+
+  font-size: 16px;
+}
+
+.future-points strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #dfe4e6;
+
+  font-size: 11px;
+}
+
+.future-points span {
+  display: block;
+
+  color: #657179;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.future-explore-btn {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 14px;
+
+  padding: 13px 20px !important;
+
+  border: 1px solid rgba(216, 184, 92, 0.4) !important;
+  border-radius: 2px !important;
+
+  background: transparent !important;
+
+  color: #d8b85c !important;
+
+  font-size: 9px !important;
+  font-weight: 900 !important;
+
+  letter-spacing: 1.5px;
+}
+
+.future-explore-btn:hover {
+  background: #d8b85c !important;
+
+  color: #05080c !important;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.iaf-final-cta {
+  position: relative;
+
+  padding: 110px 0;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(216, 184, 92, 0.08),
+      transparent 40%
+    ),
+    #080d12;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cta-content {
+  max-width: 800px;
+
+  margin: auto;
+}
+
+.cta-content h2 {
+  margin: 0 0 20px;
+
+  font-size: clamp(40px, 6vw, 72px);
+
+  line-height: 0.95;
+
+  font-weight: 900;
+
+  letter-spacing: -3px;
+}
+
+.cta-content h2 span {
+  display: block;
+
+  color: #d8b85c;
+}
+
+.cta-content p {
+  max-width: 580px;
+
+  margin: 0 auto 30px;
+
+  color: #707c84;
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.iaf-home-footer {
+  padding: 22px 0;
+
+  background: #030609;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.footer-brand img {
+  width: 38px;
+  height: 38px;
+
+  object-fit: contain;
+}
+
+.footer-brand div {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand strong {
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+}
+
+.footer-brand span {
+  margin-top: 3px;
+
+  color: #4e5a62;
+
+  font-size: 7px;
+
+  letter-spacing: 1px;
+}
+
+.footer-classification {
+  color: #3e484f;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .iaf-hero {
+    min-height: 850px;
+  }
+
+  .iaf-hero-content {
+    padding: 80px 0 45px;
+  }
+
+  .iaf-command-panel {
+    max-width: 100%;
+    margin: 10px 0 70px;
+  }
+
+  .iaf-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .future-content {
+    padding-left: 0;
+  }
+
+  .future-visual {
+    min-height: 450px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .iaf-hero {
+    min-height: 900px;
+
+    background-position: 65% center;
+  }
+
+  .iaf-hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3, 7, 10, 0.97),
+        rgba(3, 7, 10, 0.8)
+      );
+  }
+
+  .iaf-hero-content {
+    padding: 65px 15px 30px;
+  }
+
+  .iaf-command-label {
+    flex-wrap: wrap;
+
+    line-height: 1.8;
+  }
+
+  .command-line {
+    display: none;
+  }
+
+  .iaf-hero-brand {
+    margin-bottom: 25px;
+  }
+
+  .iaf-hero-brand img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .iaf-hero-brand span {
+    font-size: 8px;
+  }
+
+  .iaf-hero-brand strong {
+    font-size: 9px;
+  }
+
+  .iaf-hero h1 {
+    font-size: 50px;
+
+    letter-spacing: -3px;
+  }
+
+  .iaf-hero-description {
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+  .iaf-hero-actions {
+    flex-direction: column;
+  }
+
+  .iaf-primary-btn,
+  .iaf-secondary-btn {
+    width: 100%;
+  }
+
+  .iaf-hero-status {
+    gap: 12px;
+
+    flex-direction: column;
+  }
+
+  .iaf-command-panel {
+    margin: 10px 15px 70px;
+  }
+
+  .command-panel-main strong {
+    font-size: 48px;
+  }
+
+  .iaf-introduction,
+  .iaf-statistics,
+  .iaf-future-section {
+    padding: 70px 0;
+  }
+
+  .iaf-section-heading {
+    margin-bottom: 40px;
+  }
+
+  .iaf-section-heading h2 {
+    font-size: 36px;
+  }
+
+  .iaf-feature-card p {
+    min-height: auto;
+  }
+
+  .iaf-stat {
+    min-height: 145px;
+
+    padding: 20px;
+  }
+
+  .iaf-stat span {
+    margin-bottom: 18px;
+  }
+
+  .iaf-stat strong {
+    font-size: 28px;
+  }
+
+  .iaf-stat small {
+    font-size: 6px;
+  }
+
+  .future-visual {
+    min-height: 350px;
+  }
+
+  .future-content h2 {
+    font-size: 38px;
+  }
+
+  .future-visual-label {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .future-visual-label strong {
+    font-size: 22px;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .footer-classification {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .iaf-hero {
+    min-height: 920px;
+  }
+
+  .iaf-hero-content {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .iaf-hero h1 {
+    font-size: 43px;
+  }
+
+  .iaf-hero-brand {
+    gap: 10px;
+  }
+
+  .iaf-hero-brand img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .iaf-command-panel {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .command-panel-grid strong {
+    font-size: 16px;
+  }
+
+  .iaf-section-heading h2 {
+    font-size: 32px;
+  }
+
+  .iaf-stat strong {
+    font-size: 24px;
+  }
+
+  .future-visual {
+    min-height: 300px;
+  }
+
+  .future-content h2 {
+    font-size: 34px;
+  }
+
+  .future-points > div {
+    padding: 13px;
+  }
+
+  .cta-content h2 {
+    font-size: 42px;
+  }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .iaf-hero h1 {
+    font-size: 38px;
+  }
+
+  .iaf-hero-description {
+    font-size: 12px;
+  }
+
+  .command-panel-main strong {
+    font-size: 42px;
+  }
+
+  .iaf-stat {
+    padding: 15px;
+  }
+
+  .iaf-stat strong {
+    font-size: 21px;
+  }
+
+}
+```
