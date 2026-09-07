@@ -9,7 +9,6 @@ import {
   Modal,
   ProgressBar,
 } from "react-bootstrap";
-
 import {
   FaTimes,
   FaPlane,
@@ -24,6 +23,7 @@ import {
   FaClock,
   FaGlobe,
   FaBolt,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 
 import "../styles/FutureAircraft.css";
@@ -65,6 +65,10 @@ const futureAircraft = [
     range: "Long Range",
 
     image: amcaImage,
+
+    // Interactive Sketchfab 3D model
+    modelUrl:
+      "https://sketchfab.com/models/b2b598c09f3f4c2793c722cbd68b7c02/embed",
 
     progress: 35,
 
@@ -110,6 +114,10 @@ const futureAircraft = [
 
     image: tejasMk2Image,
 
+    // Sketchfab 3D reference model supplied for this platform
+    modelUrl:
+      "https://sketchfab.com/models/f75b93a36c1440e18c9e058b564543c1/embed",
+
     progress: 50,
 
     capabilities: [
@@ -153,6 +161,9 @@ const futureAircraft = [
     range: "Carrier Operations",
 
     image: tedbfImage,
+
+    // Add a verified TEDBF Sketchfab embed URL here when available
+    modelUrl: "",
 
     progress: 25,
 
@@ -660,7 +671,9 @@ function FutureAircraft() {
 
                     <span></span>
 
-                    PLATFORM MODEL
+                    {selectedAircraft.modelUrl
+                      ? "INTERACTIVE 3D MODEL"
+                      : "MODEL PREVIEW"}
 
                   </div>
 
@@ -669,55 +682,74 @@ function FutureAircraft() {
 
                 <div className="future-model-viewer">
 
-                  <div className="future-model-placeholder">
-
-                    <img
-                      src={selectedAircraft.image}
-                      alt={selectedAircraft.name}
+                  {selectedAircraft.modelUrl ? (
+                    <iframe
+                      title={`${selectedAircraft.name} 3D Model`}
+                      src={selectedAircraft.modelUrl}
+                      className="future-3d-iframe"
+                      allow="autoplay; fullscreen; xr-spatial-tracking"
+                      allowFullScreen
                     />
+                  ) : (
+                    <div className="future-model-placeholder">
 
-                    <div className="future-model-overlay">
+                      <img
+                        src={selectedAircraft.image}
+                        alt={selectedAircraft.name}
+                      />
 
-                      <FaPlane />
+                      <div className="future-model-overlay">
 
-                      <strong>
-                        {selectedAircraft.name}
-                      </strong>
+                        <FaPlane />
 
-                      <span>
-                        Interactive 3D model
-                        integration point
-                      </span>
+                        <strong>
+                          {selectedAircraft.name}
+                        </strong>
 
-                      <small>
-                        MODEL VISUALIZATION
-                      </small>
+                        <span>
+                          Interactive 3D model
+                          currently unavailable
+                        </span>
+
+                        <small>
+                          MODEL VISUALIZATION
+                        </small>
+
+                      </div>
 
                     </div>
-
-                  </div>
+                  )}
 
                 </div>
 
 
                 <div className="future-model-instructions">
 
-                  <span>
-                    <FaCrosshairs />
-                    DRAG TO ROTATE
-                  </span>
+                  {selectedAircraft.modelUrl ? (
+                    <>
+                      <span>
+                        <FaCrosshairs />
+                        DRAG TO ROTATE
+                      </span>
 
-                  <span>•</span>
+                      <span>•</span>
 
-                  <span>
-                    SCROLL TO ZOOM
-                  </span>
+                      <span>
+                        SCROLL TO ZOOM
+                      </span>
 
-                  <span>•</span>
+                      <span>•</span>
 
-                  <span>
-                    EXPLORE PLATFORM
-                  </span>
+                      <span>
+                        INTERACTIVE 3D VIEW
+                      </span>
+                    </>
+                  ) : (
+                    <span>
+                      <FaPlane />
+                      3D MODEL PREVIEW NOT AVAILABLE
+                    </span>
+                  )}
 
                 </div>
 
@@ -847,6 +879,11 @@ function FutureAircraft() {
                     <p>
                       {selectedAircraft.developmentStatus}
                     </p>
+
+                    <small className="future-timeline-note">
+                      Projected programme timeline — subject to development,
+                      testing and official induction decisions.
+                    </small>
 
                   </div>
 
