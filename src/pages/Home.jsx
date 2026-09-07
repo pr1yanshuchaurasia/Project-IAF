@@ -1,5 +1,6 @@
-
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 import {
   FaArrowRight,
   FaShieldAlt,
@@ -12,7 +13,8 @@ import {
   FaDatabase,
   FaChevronRight,
 } from "react-icons/fa";
- import "../styles/Home.css";
+
+import "../styles/Home.css";
 
 import iafLogo from "../assets/Indian_Air_Force-Logo.wine.png";
 import heroImage from "../assets/future-aircraft-hero.jpg";
@@ -32,8 +34,9 @@ function Home() {
         <div className="iaf-hero-grid"></div>
 
         <Container className="iaf-hero-container">
-          <Row className="align-items-center">
+          <Row className="align-items-center g-5">
 
+            {/* HERO CONTENT */}
             <Col lg={8} xl={7}>
               <div className="iaf-hero-content">
 
@@ -45,11 +48,16 @@ function Home() {
                 </div>
 
                 <div className="iaf-hero-brand">
-                  <img src={iafLogo} alt="Indian Air Force" />
+                  <img
+                    src={iafLogo}
+                    alt="Indian Air Force"
+                  />
 
                   <div>
                     <span>BHARATIYA VAYU SENA</span>
-                    <strong>INVENTORY MANAGEMENT SYSTEM</strong>
+                    <strong>
+                      INVENTORY MANAGEMENT SYSTEM
+                    </strong>
                   </div>
                 </div>
 
@@ -61,21 +69,35 @@ function Home() {
                 <p className="iaf-hero-description">
                   A unified digital platform for monitoring aircraft,
                   equipment, maintenance assets, logistics and future
-                  aviation platforms across the Indian Air Force ecosystem.
+                  aviation platforms across the air-power ecosystem.
                 </p>
 
+                {/* ACTION BUTTONS */}
                 <div className="iaf-hero-actions">
-                  <Button className="iaf-primary-btn">
+
+                  <Button
+                    as={Link}
+                    to="/inventory"
+                    className="iaf-primary-btn"
+                  >
                     ACCESS INVENTORY
                     <FaArrowRight />
                   </Button>
 
-                  <Button className="iaf-secondary-btn">
+                  <Button
+                    as={Link}
+                    to="/fighters"
+                    className="iaf-secondary-btn"
+                  >
                     EXPLORE PLATFORMS
+                    <FaArrowRight />
                   </Button>
+
                 </div>
 
+                {/* SYSTEM STATUS */}
                 <div className="iaf-hero-status">
+
                   <div>
                     <span className="status-dot"></span>
                     SYSTEM OPERATIONAL
@@ -90,22 +112,26 @@ function Home() {
                     <FaDatabase />
                     REAL-TIME DATA
                   </div>
-                </div>
 
+                </div>
               </div>
             </Col>
 
+            {/* COMMAND PANEL */}
             <Col lg={4} xl={5}>
               <div className="iaf-command-panel">
 
                 <div className="command-panel-header">
                   <span>COMMAND OVERVIEW</span>
+
                   <span className="live-status">
-                    <i></i> LIVE
+                    <i></i>
+                    LIVE
                   </span>
                 </div>
 
                 <div className="command-panel-main">
+
                   <span className="panel-kicker">
                     AIR ASSET READINESS
                   </span>
@@ -119,6 +145,7 @@ function Home() {
                   <small>
                     OPERATIONAL READINESS INDEX
                   </small>
+
                 </div>
 
                 <div className="command-panel-grid">
@@ -171,10 +198,10 @@ function Home() {
           INTRODUCTION
       ===================================================== */}
       <section className="iaf-introduction">
-
         <Container>
 
           <div className="iaf-section-heading">
+
             <div>
               <span className="section-kicker">
                 DIGITAL AIR COMMAND
@@ -192,94 +219,136 @@ function Home() {
               aircraft platforms, inventory assets, maintenance status
               and strategic aviation capabilities.
             </p>
-          </div>
 
+          </div>
 
           <Row className="g-4">
 
+            {/* AIRCRAFT */}
             <Col md={6} lg={3}>
               <Card className="iaf-feature-card">
-                <div className="feature-number">01</div>
+
+                <div className="feature-number">
+                  01
+                </div>
 
                 <FaPlane className="feature-icon" />
 
-                <h3>Aircraft Fleet</h3>
+                <h3>
+                  Aircraft Fleet
+                </h3>
 
                 <p>
                   Monitor fighter aircraft, transport platforms,
                   helicopters and support assets from one interface.
                 </p>
 
-                <div className="feature-link">
-                  VIEW FLEET <FaChevronRight />
-                </div>
+                <Link
+                  to="/fighters"
+                  className="feature-link"
+                >
+                  VIEW FLEET
+                  <FaChevronRight />
+                </Link>
+
               </Card>
             </Col>
 
 
+            {/* INVENTORY */}
             <Col md={6} lg={3}>
               <Card className="iaf-feature-card">
-                <div className="feature-number">02</div>
+
+                <div className="feature-number">
+                  02
+                </div>
 
                 <FaBoxes className="feature-icon" />
 
-                <h3>Inventory Control</h3>
+                <h3>
+                  Inventory Control
+                </h3>
 
                 <p>
                   Maintain centralized records of aviation equipment,
                   components, spares and mission-critical assets.
                 </p>
 
-                <div className="feature-link">
-                  VIEW INVENTORY <FaChevronRight />
-                </div>
+                <Link
+                  to="/inventory"
+                  className="feature-link"
+                >
+                  VIEW INVENTORY
+                  <FaChevronRight />
+                </Link>
+
               </Card>
             </Col>
 
 
+            {/* MAINTENANCE */}
             <Col md={6} lg={3}>
               <Card className="iaf-feature-card">
-                <div className="feature-number">03</div>
+
+                <div className="feature-number">
+                  03
+                </div>
 
                 <FaTools className="feature-icon" />
 
-                <h3>Maintenance</h3>
+                <h3>
+                  Maintenance
+                </h3>
 
                 <p>
                   Track maintenance cycles, service schedules,
                   aircraft availability and technical readiness.
                 </p>
 
-                <div className="feature-link">
-                  MAINTENANCE DATA <FaChevronRight />
-                </div>
+                <Link
+                  to="/maintenance"
+                  className="feature-link"
+                >
+                  MAINTENANCE DATA
+                  <FaChevronRight />
+                </Link>
+
               </Card>
             </Col>
 
 
+            {/* ANALYTICS */}
             <Col md={6} lg={3}>
               <Card className="iaf-feature-card">
-                <div className="feature-number">04</div>
+
+                <div className="feature-number">
+                  04
+                </div>
 
                 <FaChartLine className="feature-icon" />
 
-                <h3>Analytics</h3>
+                <h3>
+                  Analytics
+                </h3>
 
                 <p>
                   Transform inventory and operational data into
                   actionable readiness and performance insights.
                 </p>
 
-                <div className="feature-link">
-                  VIEW ANALYTICS <FaChevronRight />
-                </div>
+                <Link
+                  to="/analytics"
+                  className="feature-link"
+                >
+                  VIEW ANALYTICS
+                  <FaChevronRight />
+                </Link>
+
               </Card>
             </Col>
 
           </Row>
-
         </Container>
-
       </section>
 
 
@@ -287,20 +356,23 @@ function Home() {
           COMMAND STATISTICS
       ===================================================== */}
       <section className="iaf-statistics">
-
         <Container>
 
           <div className="statistics-header">
+
             <span className="section-kicker">
               OPERATIONAL OVERVIEW
             </span>
 
-            <h2>MISSION READINESS</h2>
+            <h2>
+              MISSION READINESS
+            </h2>
 
             <p>
               Strategic visibility across the aviation inventory
               management ecosystem.
             </p>
+
           </div>
 
           <Row className="g-0 iaf-stat-row">
@@ -338,9 +410,7 @@ function Home() {
             </Col>
 
           </Row>
-
         </Container>
-
       </section>
 
 
@@ -348,11 +418,11 @@ function Home() {
           FUTURE AIR POWER
       ===================================================== */}
       <section className="iaf-future-section">
-
         <Container>
 
           <Row className="align-items-center g-5">
 
+            {/* IMAGE */}
             <Col lg={6}>
 
               <div className="future-visual">
@@ -382,6 +452,7 @@ function Home() {
             </Col>
 
 
+            {/* CONTENT */}
             <Col lg={6}>
 
               <div className="future-content">
@@ -397,45 +468,64 @@ function Home() {
 
                 <p>
                   Explore next-generation aviation platforms and
-                  emerging technologies shaping the future of Indian
-                  air power.
+                  emerging technologies shaping the future of
+                  Indian air power.
                 </p>
 
                 <div className="future-points">
 
                   <div>
                     <FaCrosshairs />
+
                     <div>
-                      <strong>Advanced Combat Platforms</strong>
+                      <strong>
+                        Advanced Combat Platforms
+                      </strong>
+
                       <span>
                         Next-generation fighter and combat aircraft.
                       </span>
                     </div>
                   </div>
 
+
                   <div>
                     <FaSatelliteDish />
+
                     <div>
-                      <strong>Network-Centric Operations</strong>
+                      <strong>
+                        Network-Centric Operations
+                      </strong>
+
                       <span>
                         Integrated command, control and intelligence.
                       </span>
                     </div>
                   </div>
 
+
                   <div>
                     <FaChartLine />
+
                     <div>
-                      <strong>Technology Readiness</strong>
+                      <strong>
+                        Technology Readiness
+                      </strong>
+
                       <span>
-                        Track development and future induction programs.
+                        Track development and future induction
+                        programs.
                       </span>
                     </div>
                   </div>
 
                 </div>
 
-                <Button className="future-explore-btn">
+                <Button
+                  as={Link}
+                  to="/future-aircraft"
+                  className="future-explore-btn"
+                >
                   EXPLORE FUTURE PLATFORMS
                   <FaArrowRight />
                 </Button>
@@ -445,9 +535,7 @@ function Home() {
             </Col>
 
           </Row>
-
         </Container>
-
       </section>
 
 
@@ -455,7 +543,6 @@ function Home() {
           FINAL CTA
       ===================================================== */}
       <section className="iaf-final-cta">
-
         <Container>
 
           <div className="cta-content">
@@ -466,15 +553,21 @@ function Home() {
 
             <h2>
               AIR POWER.
-              <span>PRECISION. READINESS.</span>
+              <span>
+                PRECISION. READINESS.
+              </span>
             </h2>
 
             <p>
-              A unified digital approach to managing aviation
-              assets, operational readiness and future capabilities.
+              A unified digital approach to managing aviation assets,
+              operational readiness and future capabilities.
             </p>
 
-            <Button className="iaf-primary-btn">
+            <Button
+              as={Link}
+              to="/inventory"
+              className="iaf-primary-btn"
+            >
               ENTER COMMAND SYSTEM
               <FaArrowRight />
             </Button>
@@ -482,12 +575,11 @@ function Home() {
           </div>
 
         </Container>
-
       </section>
 
 
       {/* =====================================================
-          FOOTER STRIP
+          FOOTER
       ===================================================== */}
       <footer className="iaf-home-footer">
 
@@ -497,10 +589,16 @@ function Home() {
 
             <div className="footer-brand">
 
-              <img src={iafLogo} alt="IAF Logo" />
+              <img
+                src={iafLogo}
+                alt="Indian Air Force Logo"
+              />
 
               <div>
-                <strong>INDIAN AIR FORCE</strong>
+                <strong>
+                  INDIAN AIR FORCE
+                </strong>
+
                 <span>
                   INVENTORY MANAGEMENT SYSTEM
                 </span>
@@ -523,4 +621,3 @@ function Home() {
 }
 
 export default Home;
-
