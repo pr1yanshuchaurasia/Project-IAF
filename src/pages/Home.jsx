@@ -12,7 +12,7 @@ import {
   FaDatabase,
   FaChevronRight,
 } from "react-icons/fa";
- impor
+ import "../styles/Home.css";
 
 import iafLogo from "../assets/Indian_Air_Force-Logo.wine.png";
 import heroImage from "../assets/future-aircraft-hero.jpg";
